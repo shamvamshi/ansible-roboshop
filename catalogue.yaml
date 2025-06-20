@@ -49,10 +49,10 @@
 
   - name: systemctl daemon reload
     ansible.builtin.system_service:
-      daemon_reload: yes
+      daemon_reload: true
     
   - name: systemctl start and enable catalogue
     ansible.builtin.service:
       name: catalogue
       state: started
-      enable: yes
+      enabled: yes
