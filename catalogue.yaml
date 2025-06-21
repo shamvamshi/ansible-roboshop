@@ -82,7 +82,7 @@
       msg: "{{ catalogue_output }}"
 
   - name: load products
-    ansible.builtin.command: mongosh --host mongodb.shamrobos.site </app/db/master-data.js
+    ansible.builtin.shell: mongosh --host mongodb.shamrobos.site < /app/db/master-data.js # you have to use shell command because it consist of special characters like >
     when: catalogue_output.stdout | int < 0
 
   
