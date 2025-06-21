@@ -67,10 +67,17 @@
       name: mongodb-mongosh
       state: present
 
-  - name: load products data
-    community.mongodb.mongodb_shell:
-      file: /app/db/master-data.js
-      idempotent: yes
-      login_host: mongodb.shamrobos.site
+  # - name: load products data
+  #   community.mongodb.mongodb_shell:
+  #     file: /app/db/master-data.js
+  #     idempotent: yes
+  #     login_host: mongodb.shamrobos.site
+
+  - name: check products loaded or not
+    ansible.builtin.command: mongosh --host mongodb.daws84s.site --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
+    register: catalogue_output
+
+  - name: print catalogue output
+    
 
   
