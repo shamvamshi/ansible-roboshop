@@ -83,6 +83,6 @@
 
   - name: load products
     ansible.builtin.command: mongosh --host mongodb.shamrobos.site </app/db/master-data.js
-    when: catalogue_output.stdout < 0
+    when: catalogue_output.stdout | int < 0
 
   
