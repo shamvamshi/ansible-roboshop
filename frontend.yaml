@@ -42,7 +42,7 @@
 
   - name: remove nginx default configurations
     ansible.builtin.file:
-      path: /usr/share/nginx/html
+      path: /etc/nginx/nginx.conf
       state: absent
       
   - name: copy roboshop nginx configurations
