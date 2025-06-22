@@ -1,4 +1,4 @@
-- name: install nodejs
+- name: configure user component
   hosts: user
   become: yes
   tasks:
@@ -9,7 +9,7 @@
     ansible.builtin.command: dnf module enable nodejs:20 -y
 
   - name: install nodejs  
-    ansible.builtin.dnf: dnf module install nodejs -yes
+    ansible.builtin.dnf: 
       name: nodejs
       state: present
     
