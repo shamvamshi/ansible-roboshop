@@ -1,0 +1,12 @@
+- name: configure mysql component
+  hosts: mysql 
+  become: yes
+  tasks:
+  - name: install mysql server  
+    ansible.builtin.command: dnf install mysql-server -y
+
+  - name: enable and start mysql service
+    ansible.builtin.service:
+    name: mysql
+    enabled: yes
+    state: started
