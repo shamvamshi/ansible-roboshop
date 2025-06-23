@@ -4,8 +4,11 @@
   tasks: 
   - name: install maven
     ansible.builtin.dnf:
-      name: maven
+      name: {{ item }} # while using loop u should only use { item }
       state: installed
+    loop:
+    - PyMySQL
+    - maven
 
   - name: create app directory
     ansible.builtin.file:
