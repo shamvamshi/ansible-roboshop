@@ -82,7 +82,7 @@
   - name: import data
     tags:    # by using tags module you can only call only this one will refresh in mobexterm
     - import
-    community.mysql.mysql_info:
+    community.mysql.mysql_db:
       name: all
       login_user: root
       login_password: RoboShop@1
