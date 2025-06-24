@@ -7,14 +7,16 @@
       name: "{{ item }}"
       state: installed
     loop:
-    - cryptography
     - maven
     - mysql
   
-  - name: install PyMySQL
+  - name: install PyMySQL and cryptography
     ansible.builtin.pip:
-      name: PyMySQL
+      name: "{{ item }}"
       executable: pip3.9
+    loop:
+    - cryptography
+    - PyMySQL
 
   - name: create app directory
     ansible.builtin.file:
