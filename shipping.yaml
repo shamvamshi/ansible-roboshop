@@ -95,6 +95,8 @@
     - app/db/master-data.sql
 
   - name: restart shipping
+    tags:    # by using tags module you can only call only this one will refresh in mobexterm
+    - import
     ansible.builtin.service:
       state: restarted
       name: shipping
