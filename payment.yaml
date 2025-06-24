@@ -51,7 +51,10 @@
       daemon-reload: yes
 
   - name: enable and start the service
+    tags:
+    - import
     ansible.builtin.service:
+      name: payment
       state: started
       enabled: yes
 
