@@ -92,7 +92,7 @@
     loop:
     - /app/db/schema.sql
     - /app/db/app-user.sql 
-    - app/db/master-data.sql
+    - /app/db/master-data.sql
 
   - name: restart shipping
     tags:    # by using tags module you can only call only this one will refresh in mobexterm
